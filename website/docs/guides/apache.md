@@ -80,8 +80,9 @@ services:
       - teslamate-grafana-data:/var/lib/grafana
 
   mosquitto:
-    image: eclipse-mosquitto:1.6
+    image: eclipse-mosquitto:2
     restart: always
+    command: mosquitto -c /mosquitto-no-auth.conf
     ports:
       - 127.0.0.1:1883:1883
     volumes:
@@ -96,6 +97,8 @@ volumes:
 ```
 
 ### .env
+
+This file should reside in the same folder as the docker-compose.yml file.
 
 ```plaintext title=".env"
 TM_DB_USER=teslamate
