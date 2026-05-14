@@ -4,10 +4,17 @@
 
 ### New features
 
+- feat: handle sleep behavior of MCU2 upgraded cars (#4453 -> [f58df80](https://github.com/teslamate-org/teslamate/commit/f58df8088c3b935851e84e2f935a041fc393b3ff) - @micves, @JakobLichterfeld and @brianmay)
+
 ### Improvements and bug fixes
 
 - feat(webview): Sort vehicles by display_priority (#5188 - @olsoybakk and @swiffer)
 - feat(webview): Make icons inherit text color for better contrast in dark mode (#5193 - @olsoybakk)
+- feat(webview): Add dark mode support for background and buttons in the map (#5240 - @olsoybakk and @swiffer)
+- fix(webview): Prevent rounding of map tiles via Bulma CSS (#5265 - @swiffer)
+- perf: ensure BRIN indexes don't degrade over time (#5276 - @swiffer)
+- fix: fix folder creation and bash 3.2 compatibility in dashboards.sh (#5233 - @svennergr)
+- fix: handle nil tire pressure values in summary view (#5297 - @elemated)
 
 #### Build, CI, internal
 
@@ -26,6 +33,29 @@
 - ci: build images for main branch and use buildcache of main as fallback for PR builds (#5212 - @swiffer)
 - ci: run Purge PR images workflow only if PR is from our own repo (#5217 - @swiffer)
 - ci: for check_paths ensure the job value is retrieved and set as workflow output correctly (#5219 - @swiffer)
+- build(deps): bump castore from 1.0.17 to 1.0.18 (#5255)
+- build(deps-dev): bump credo from 1.7.16 to 1.7.17 (#5254)
+- build(deps): bump floki from 0.38.0 to 0.38.1 (#5249)
+- build(deps): bump crate-ci/typos from 1.44.0 to 1.45.0 (#5251)
+- build(deps): bump actions/cache from 5.0.3 to 5.0.4 (#5248)
+- build(deps): bump dorny/paths-filter from 4.0.0 to 4.0.1 (#5247)
+- build(deps): bump ecto_sql from 3.13.4 to 3.13.5 (#5260 - @swiffer)
+- build(deps): bump ex_cldr from 2.47.1 to 2.47.2 (#5260 - @swiffer)
+- build(deps-dev): bump esbuild from 0.27.3 to 0.27.7 in /assets (#5261 - @swiffer)
+- build(deps-dev): bump esbuild-sass-plugin from 3.6.0 to 3.7.0 in /assets (#5261 - @swiffer)
+- build(deps-dev): bump sass from 1.97.3 to 1.99.0 in /assets (#5261 - @swiffer)
+- build(deps): update packages in /website and remove obsolete overrides (#5266 - @swiffer)
+- build(deps): update flake.lock (#5275)
+- build(deps): update flake.lock (#5288)
+- build(deps): bump docusaurus from 3.9.2 to 3.10.0 in /website (#5302 - @swiffer)
+- refactor: replace fake_online_state integer with typed mcu2_online_check atom (#5245 - @brianmay)
+- fix: update GitHub Actions configuration for Dependabot to include action directories (#5316 - @swiffer)
+- build(deps): bump docker/login-action from 4.0.0 to 4.1.0, docker/build-push-action from 7.0.0 to 7.1.0, actions/upload-artifact from 7.0.0 to 7.0.1, actions/upload-artifact/merge from 7.0.0 to 7.0.1, erlef/setup-beam from 1.18.1 to 1.24.0, actions/cache from 5.0.4 to 5.0.5, actions/cache/restore from 5.0.4 to 5.0.5, actions/cache/save from 5.0.4 to 5.0.5 and crate-ci/typos from 1.45.0 to 1.46.0 (#5317)
+- build(deps): bump leaflet-geoman-free from 2.19.2 to 2.19.3 in /assets (#5301 - @swiffer)
+- build(deps): bump plug_cowboy from 2.8.0 to 2.8.1 (#5314)
+- build(deps-dev): bump esbuild from 0.27.7 to 0.28.0 in /assets (#5312)
+- build(deps-dev): bump credo from 1.7.17 to 1.7.18 (#5315)
+- sec(deps): add uuid override to version 14.0.0 in /website (#5320 - @JakobLichterfeld)
 
 #### Dashboards
 
@@ -33,10 +63,13 @@
 - fix: ensure Charges / Drives dashboards load correctly if no Geofence exists (#5199 - @swiffer)
 - fix: division by zero in SQL query for cost_mileage in Trips dashboard (#5198 - @DrMichael)
 - fix: handle incomplete data correctly in Charging Stats / Statistics / Trips dashboards (#5229 - @swiffer)
+- feat: enable timepicker in efficiency dashboard (#5257 - @swiffer)
+- fix: ensure low precision mode is used for consumption gross for larger intervals (#5257 - @swiffer)
 
 #### Translations
 
 - i18n: updated Catalan default.po (#5180 - @pellix)
+- i18n: Update Korean translations in default.po (#5218 - @dongbum)
 
 #### Documentation
 
